@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ylb.customize.waccessories.mapper.WAccessoriesMapper">
+    <!-- 通用映射 -->
+    <resultMap id="BaseResultMap" type="com.ylb.customize.waccessories.pojo.po.WAccessories">
+        <id column="id" property="id"/>
+        <result column="accessories_type_id" property="accessoriesTypeId"/>
+        <result column="accessories_tag_id" property="accessoriesTagId"/>
+        <result column="name" property="name"/>
+        <result column="picture_url" property="pictureUrl"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, accessories_type_id, accessories_tag_id, name, picture_url, create_time, update_time
+    </sql>
+    <select id="getAccessoriesCustomizeList"
+            resultType="com.ylb.customize.waccessories.pojo.po.AccessoriesCustomizePO">
+        SELECT
+            at.id AS accessories_type_id,
+            at.name AS accessories_type_name,
+            at.x AS position_x,
+            at.y AS position_y,
+            tag.tag_name AS tagName,
+            a.id AS accessory_id,
+            a.name AS accessory_name,
+            a.picture_url AS accessoryPictureUrl,
+            a.is_default AS isDefault
+        FROM
+            w_accessories_type at
+JOIN
+    w_product_accessories_type pat ON at.id = pat.accessories_type_id
+            JOIN
+            w_accessories a ON at.id = a.accessories_type_id
+            JOIN
+            w_accessories_tag tag on a.accessories_tag_id = tag.id
+        WHERE
+            pat.product_id = #{productId}
+        ORDER BY
+            at.x, at.y, a.is_default DESC
+    </select>
+
+</mapper>

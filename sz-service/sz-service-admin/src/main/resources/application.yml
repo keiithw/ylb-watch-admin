@@ -50,8 +50,8 @@ sz:
     module-name: sz-service
     service-name: sz-service-admin
     global:
-      author: sz-admin
-      packages: com.sz.admin
+      author: keith.wu
+      packages: com.ylb.customize
   # 微信生态
   wechat:
     # 小程序

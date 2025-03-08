@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Slf4j
 @Configuration
-@MapperScan(basePackages = {"com.sz.admin.*.mapper", "com.sz.generator.mapper", "com.sz.applet.*.mapper"})
+@MapperScan(basePackages = {"com.sz.admin.*.mapper", "com.sz.generator.mapper", "com.sz.applet.*.mapper"
+        ,"com.ylb.customize.*.mapper"})
 public class MapperConfiguration {
 }

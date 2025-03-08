@@ -42,3 +42,6 @@ router:
     - "/swagger-ui.html"
     - "/www/**"
     - "/wechat/**"
+    - "/api/admin/test"
+    - "/web/**"
+    - "/web/product/**"

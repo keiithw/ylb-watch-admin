@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ylb.customize.wproductaccessoriestype.mapper.WProductAccessoriesTypeMapper">
+    <!-- 通用映射 -->
+    <resultMap id="BaseResultMap" type="com.ylb.customize.wproductaccessoriestype.pojo.po.WProductAccessoriesType">
+        <id column="id" property="id"/>
+        <result column="product_id" property="productId"/>
+        <result column="accessories_type_id" property="accessoriesTypeId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, product_id, accessories_type_id, create_time, update_time
+    </sql>
+
+</mapper>
