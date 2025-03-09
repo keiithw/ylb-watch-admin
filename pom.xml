@@ -114,13 +114,6 @@
     </repositories>-->
 
     <build>
-        <resources>
-            <!-- 包含上层config目录 -->
-            <resource>
-                <directory>../../config</directory>
-                <targetPath>config</targetPath>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
