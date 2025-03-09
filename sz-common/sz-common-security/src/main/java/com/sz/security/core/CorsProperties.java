@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Arrays;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -16,6 +17,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @ConfigurationProperties(prefix = "sz.cors")
 public class CorsProperties {
 
-    private CopyOnWriteArrayList<String> allowedOrigins;
+    private CopyOnWriteArrayList<String> allowedOrigins=new CopyOnWriteArrayList<>(Arrays.asList("*"));
 
 }
