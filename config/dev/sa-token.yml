@@ -43,4 +43,5 @@ router:
     - "/www/**"
     - "/wechat/**"
     - "/api/admin/test"
-    - "/api/admin/web/product/**"
+    - "/web/**"
+    - "/web/product/**"
