@@ -2,6 +2,7 @@ package com.ylb.customize.wproduct.controller.api;
 
 import com.sz.core.common.entity.ApiResult;
 import com.sz.core.common.entity.PageResult;
+import com.ylb.customize.director.CustomizeDirector;
 import com.ylb.customize.wproduct.pojo.dto.WProductListDTO;
 import com.ylb.customize.wproduct.pojo.vo.ProductCustomizeVO;
 import com.ylb.customize.wproduct.pojo.vo.WProductVO;
@@ -21,6 +22,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductController {
     private final WProductService productService;
+    private final CustomizeDirector customizeDirector;
 
     @GetMapping("/list")
     public ApiResult<List<WProductVO>> list(WProductListDTO dto) {
@@ -29,7 +31,6 @@ public class ProductController {
 
     @GetMapping("/customizePage/{productId}")
     public ApiResult<ProductCustomizeVO> customizePage(@PathVariable String productId) {
-
-        return null;
+        return ApiResult.success(customizeDirector.getProductCustomizeVO(Integer.valueOf(productId)));
     }
 }
